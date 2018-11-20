@@ -1,0 +1,15 @@
+<%= form_for(@task) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :detail %>
+  <%= f.text_field :detail %>
+
+  <% if @task.new_record? %>
+    <%= f.submit 'Create!' %>
+  <% else %>
+  <%= f.check_box :completed %>
+  <%= f.label :completed %>
+    <%= f.submit 'Update!' %>
+  <% end %>
+<% end %>
